@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_books">
+
+    <fragment
+        android:id="@+id/nav_books"
+        android:name="com.example.lordoftheringsapp.ui.books.BooksFragment"
+        android:label="@string/menu_books"
+        tools:layout="@layout/fragment_books" >
+        <action
+            android:id="@+id/action_nav_books_to_bookChaptersFragment"
+            app:destination="@id/bookChaptersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_movies"
+        android:name="com.example.lordoftheringsapp.ui.movies.MoviesFragment"
+        android:label="@string/menu_movies"
+        tools:layout="@layout/fragment_movies" />
+
+    <fragment
+        android:id="@+id/nav_characters"
+        android:name="com.example.lordoftheringsapp.ui.characters.CharactersFragment"
+        android:label="@string/menu_characters"
+        tools:layout="@layout/fragment_characters" />
+    <fragment
+        android:id="@+id/bookChaptersFragment"
+        android:name="com.example.lordoftheringsapp.ui.bookChapters.BookChaptersFragment"
+        android:label="@string/book_chapters"
+        tools:layout="@layout/fragment_book_chapters" />
+    <fragment
+        android:id="@+id/nav_quotes"
+        android:name="com.example.lordoftheringsapp.ui.quotes.QuotesFragment"
+        android:label="@string/menu_quotes"
+        tools:layout="@layout/fragment_quotes" />
+
+    <fragment
+        android:id="@+id/nav_chapters"
+        android:name="com.example.lordoftheringsapp.ui.chapters.ChaptersFragment"
+        android:label="@string/chapters"
+        tools:layout="@layout/fragment_chapters" />
+
+
+</navigation>

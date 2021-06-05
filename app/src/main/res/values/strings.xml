@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Lord Of The Rings App</string>
+    <string name="app_name_short">LOTR App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="action_support">Support</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="my_dev_mail">filip.gojkovic.dev@gmail.com</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_support">SupportActivity</string>
+
+    <!-- Books and Chapters -->
+    <string name="menu_books">Books</string>
+    <string name="chapters">Chapters</string>
+    <string name="book_chapters">Book Chapters</string>
+
+    <!-- Movies -->
+    <string name="menu_movies">Movies</string>
+
+    <!-- Characters -->
+    <string name="menu_characters">Characters</string>
+    <string name="wiki_link">Wiki Link</string>
+    <string name="link">Link</string>
+
+    <!-- Quotes -->
+    <string name="menu_quotes">Quotes</string>
+
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- Miscellaneous Preferences -->
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="dark_mode">Dark mode</string>
+    <!-- Theme Preferences -->
+    <string name="themes">Themes</string>
+
+
+    <string-array name="support_string_array">
+        <item>Remove ads</item>
+        <item>Changelog</item>
+        <item>Share this app</item>
+        <item>More apps by developer</item>
+        <item>Feedback</item>
+    </string-array>
+
+</resources>

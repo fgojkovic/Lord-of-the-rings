@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Lord Of The Rings App"

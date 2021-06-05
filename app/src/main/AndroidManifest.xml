@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lordoftheringsapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ring_icon"
+        android:label="@string/app_name_short"
+        android:roundIcon="@mipmap/ring_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LordOfTheRingsApp">
+
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6997427691996385~3777335937"/>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/action_settings"></activity>
+        <activity
+            android:name=".SupportActivity"
+            android:label="@string/action_support"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.LordOfTheRingsApp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <!-- Za otvaranje linkova u browseru -->
+                <action android:name="android.intent.action.VIEW" />
+                <!--&lt;!&ndash; Include the host attribute if you want your app to respond
+                     only to URLs with your app's domain. &ndash;&gt;
+                <data android:scheme="http" android:host="www.example.com" />
+                <category android:name="android.intent.category.DEFAULT" />
+                &lt;!&ndash; The BROWSABLE category is required to get links from web pages. &ndash;&gt;
+                <category android:name="android.intent.category.BROWSABLE" />-->
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

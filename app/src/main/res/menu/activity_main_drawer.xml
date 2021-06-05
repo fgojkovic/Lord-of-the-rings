@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_books"
+            android:icon="@drawable/ic_menu_chapters"
+            android:title="@string/menu_books" />
+        <item
+            android:id="@+id/nav_movies"
+            android:icon="@drawable/ic_menu_movies"
+            android:title="@string/menu_movies" />
+        <item
+            android:id="@+id/nav_characters"
+            android:icon="@drawable/ic_menu_characters"
+            android:title="@string/menu_characters" />
+        <item
+            android:id="@+id/nav_quotes"
+            android:icon="@drawable/ic_menu_quotes"
+            android:title="@string/menu_quotes" />
+        <item
+            android:id="@+id/nav_chapters"
+            android:icon="@drawable/ic_menu_books"
+            android:title="@string/chapters" />
+       <!-- <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/action_settings" />
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@drawable/ic_menu_support"
+            android:title="@string/action_support" />-->
+    </group>
+</menu>
