@@ -23,6 +23,8 @@ import com.example.lordoftheringsapp.interfaces.AdInterface;
 import com.example.lordoftheringsapp.models.movieModels.Movie;
 import com.example.lordoftheringsapp.models.movieModels.MovieExample;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -87,14 +89,16 @@ public class MoviesFragment extends Fragment {
         Call<MovieExample> call = apiInterface.getMovies(ApiCall.TOKEN);
         call.enqueue(new Callback<MovieExample>() {
             @Override
-            public void onResponse(Call<MovieExample> call, Response<MovieExample> response) {
-                movies.addAll(response.body().getMovies());
+            public void onResponse(@NotNull Call<MovieExample> call, @NotNull Response<MovieExample> response) {
+                if (movies != null) {
+                    movies.addAll(response.body().getMovies());
+                }
                 movieAdapter.notifyDataSetChanged();
                 recyclerView.scheduleLayoutAnimation();
             }
 
             @Override
-            public void onFailure(Call<MovieExample> call, Throwable t) {
+            public void onFailure(@NotNull Call<MovieExample> call, @NotNull Throwable t) {
                 Toast.makeText(getContext(), "Movie call FAILED!!", Toast.LENGTH_SHORT).show();
                 t.printStackTrace();
             }

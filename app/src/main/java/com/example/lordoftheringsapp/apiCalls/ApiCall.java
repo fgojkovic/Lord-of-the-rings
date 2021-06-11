@@ -28,7 +28,7 @@ public class ApiCall {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         //Autentification with okhttpclient
-        /*OkHttpClient client = new OkHttpClient().newBuilder().addInterceptor(new Interceptor() {
+       /* OkHttpClient client = new OkHttpClient().newBuilder().addInterceptor(new Interceptor() {
             @NotNull
             @Override
             public Response intercept(@NotNull Chain chain) throws IOException {
