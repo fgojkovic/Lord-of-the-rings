@@ -28,6 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
+                android:fontFamily="@font/prince_valiant_family"
+                android:textStyle="bold"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
@@ -39,13 +41,17 @@
                 android:id="@+id/chapter_row_book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/prince_valiant_family"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/chapter_row_chapter_name"/>
+                app:layout_constraintTop_toBottomOf="@id/chapter_row_chapter_name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

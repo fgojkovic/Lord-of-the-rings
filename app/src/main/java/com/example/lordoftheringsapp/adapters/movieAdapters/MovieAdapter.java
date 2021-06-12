@@ -1,6 +1,7 @@
 package com.example.lordoftheringsapp.adapters.movieAdapters;
 
 import android.content.Context;
+import android.text.PrecomputedText;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MoviesViewHo
                 notifyItemChanged(position);
             }
         });
+
+        /*if (position == movies.size()) {
+            ViewGroup.LayoutParams =
+            holder.itemView.setLayoutParams();
+        }*/
 
 
         /*holder.name.setText(movie.getName());

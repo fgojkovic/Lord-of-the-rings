@@ -30,9 +30,10 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BooksViewHolde
         this.books = books;
         this.bookChaptersInterface = bookChaptersInterface;
         //pictureList.add(R.mipmap.book_one_cover_foreground);
-        pictureList.add(R.mipmap.book_one_cover);
-        pictureList.add(R.mipmap.book_two_cover);
-        pictureList.add(R.mipmap.book_three_cover);
+
+        pictureList.add(R.drawable.book_1_cover);
+        pictureList.add(R.drawable.book_2_cover);
+        pictureList.add(R.drawable.book_3_cover);
     }
 
     @NonNull

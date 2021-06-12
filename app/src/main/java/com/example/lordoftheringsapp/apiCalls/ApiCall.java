@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiCall {
 
 
-    public static final String TOKEN = "Bearer OXGUgP6u2niuAxyhobUN";
+    public static final String TOKEN = "Bearer iXxlqVvWt_bMh_tE0jzn";
     private static Retrofit retrofit = null;
 
     public static Retrofit getApiCall() {

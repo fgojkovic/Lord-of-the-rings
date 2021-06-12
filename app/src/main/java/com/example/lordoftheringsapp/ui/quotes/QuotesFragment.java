@@ -81,7 +81,9 @@ public class QuotesFragment extends Fragment {
             @Override
             public void onResponse(Call<QuoteExample> call, Response<QuoteExample> response) {
                 //Toast.makeText(getContext(), "Quotes call Success!!", Toast.LENGTH_SHORT).show();
-                quotes.clear();
+                if (response.body() != null) {
+                    quotes.clear();
+                }
                 quotes.addAll(response.body().getQuotes());
             }
 

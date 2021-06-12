@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="medieval_font_stlye">
+        <item name="android:fontFamily">@font/cardinal_family</item>
+    </style>
+
+    <style name="prince_font_style">
+        <item name="android:fontFamily">@font/prince_valiant_family</item>
+    </style>
+</resources>
