@@ -6,6 +6,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Character {
+
+    private boolean expanded;
+
     @SerializedName("_id")
     @Expose
     private String id;
@@ -126,6 +129,14 @@ public class Character {
 
     public void setWikiUrl(String wikiUrl) {
         this.wikiUrl = wikiUrl;
+    }
+
+    public boolean isExpanded() {
+        return expanded;
+    }
+
+    public void setExpanded(boolean expanded) {
+        this.expanded = expanded;
     }
 
     @Override

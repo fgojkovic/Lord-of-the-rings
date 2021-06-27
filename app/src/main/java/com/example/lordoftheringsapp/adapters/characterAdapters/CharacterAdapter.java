@@ -8,6 +8,8 @@ import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>
-public class CharacterAdapter extends PagingDataAdapter<Character, CharacterAdapter.CharacterViewHolder> {
+public class CharacterAdapter extends PagingDataAdapter<Character, CharacterAdapter.CharacterViewHolder> implements SectionIndexer {
 
     private List<Character> characters = new ArrayList<>();
     private Context context;
@@ -47,79 +49,19 @@ public class CharacterAdapter extends PagingDataAdapter<Character, CharacterAdap
 
     @Override
     public void onBindViewHolder(@NonNull CharacterAdapter.CharacterViewHolder holder, int position) {
-        String toSend = "Name: " + characters.get(position).getName();
-        holder.name.setText(toSend);
-        if(!characters.get(position).getHeight().equals("")) {
-            toSend = "Height: " + characters.get(position).getHeight();
-            holder.height.setText(toSend);
-        } else {
-            holder.height.setVisibility(View.GONE);
-        }
+        Character character = characters.get(position);
 
-        if(!characters.get(position).getRace().equals("")) {
-            toSend = "Race: " + characters.get(position).getRace();
-            holder.race.setText(toSend);
-        }else {
-            holder.race.setVisibility(View.GONE);
-        }
+        holder.Bind(character, context);
 
-        if(!characters.get(position).getGender().equals("")) {
-            toSend = "Gender: " + characters.get(position).getGender();
-            holder.gender.setText(toSend);
-        }else {
-            holder.gender.setVisibility(View.GONE);
-        }
-
-        if(!characters.get(position).getBirth().equals("")) {
-            toSend = "Birth: " + characters.get(position).getBirth();
-            holder.birth.setText(toSend);
-        }else {
-            holder.birth.setVisibility(View.GONE);
-        }
-
-        if(!characters.get(position).getSpouse().equals("")) {
-            toSend = "Spouse: " + characters.get(position).getSpouse();
-            holder.spouse.setText(toSend);
-        }else {
-            holder.spouse.setVisibility(View.GONE);
-        }
-
-        if(!characters.get(position).getDeath().equals("")) {
-            toSend = "Death: " + characters.get(position).getDeath();
-            holder.death.setText(toSend);
-        }else {
-            holder.death.setVisibility(View.GONE);
-        }
-
-        if(!characters.get(position).getRealm().equals("")) {
-            toSend = "Realm: " + characters.get(position).getRealm();
-            holder.realm.setText(toSend);
-        }else {
-            holder.realm.setVisibility(View.GONE);
-        }
-
-        if(!characters.get(position).getHair().equals("")) {
-            toSend = "Hair: " + characters.get(position).getHair();
-            holder.hair.setText(toSend);
-        } else {
-            holder.hair.setVisibility(View.GONE);
-        }
-
-        //holder.wikiUrl.setText(characters.get(position).getWikiUrl());
-        //holder.wikiUrl.setMovementMethod(LinkMovementMethod.getInstance());
-
-        holder.wikiLink.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri webpage = Uri.parse(characters.get(position).getWikiUrl());
-                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-                if (intent.resolveActivity(context.getPackageManager()) != null) {
-                    context.startActivity(intent);
-                }
-                //charactersInterface.openWikiLink(characters.get(position).getWikiUrl());
-                //getActivity().getPackageManager())
+                boolean isExpanded = character.isExpanded();
+                character.setExpanded(!isExpanded);
+                notifyItemChanged(position);
             }
         });
+
     }
 
     @Override
@@ -144,10 +86,25 @@ public class CharacterAdapter extends PagingDataAdapter<Character, CharacterAdap
         }
     };
 
+    @Override
+    public Object[] getSections() {
+        return new Object[0];
+    }
+
+    @Override
+    public int getPositionForSection(int sectionIndex) {
+        return 0;
+    }
+
+    @Override
+    public int getSectionForPosition(int position) {
+        return 0;
+    }
 
 
     public static class CharacterViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
+        private TextView nameSubMenu;
         private TextView height;
         private TextView race;
         private TextView gender;
@@ -158,12 +115,14 @@ public class CharacterAdapter extends PagingDataAdapter<Character, CharacterAdap
         private TextView hair;
         //private TextView wikiUrl;
         private MaterialButton wikiLink;
+        private LinearLayout subMenu;
 
 
         public CharacterViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.character_row_character_name);
+            nameSubMenu = itemView.findViewById(R.id.character_row_character_name_sub_menu);
             height = itemView.findViewById(R.id.character_row_character_height);
             race = itemView.findViewById(R.id.character_row_character_race);
             gender = itemView.findViewById(R.id.character_row_character_gender);
@@ -174,6 +133,88 @@ public class CharacterAdapter extends PagingDataAdapter<Character, CharacterAdap
             hair = itemView.findViewById(R.id.character_row_character_hair);
             //wikiUrl = itemView.findViewById(R.id.character_row_character_wiki_url);
             wikiLink = itemView.findViewById(R.id.character_row_character_wiki_url_button);
+            subMenu = itemView.findViewById(R.id.character_row_sub_menu);
+        }
+
+        private void Bind(Character character, Context context) {
+            boolean expanded = character.isExpanded();
+
+            subMenu.setVisibility(expanded ? View.VISIBLE : View.GONE);
+
+            String toSend = "Name: " + character.getName();
+            name.setText(character.getName());
+            nameSubMenu.setText(toSend);
+            if(!character.getHeight().equals("")) {
+                toSend = "Height: " + character.getHeight();
+                height.setText(toSend);
+            } else {
+                height.setVisibility(View.GONE);
+            }
+
+            if(!character.getRace().equals("")) {
+                toSend = "Race: " + character.getRace();
+                race.setText(toSend);
+            }else {
+                race.setVisibility(View.GONE);
+            }
+
+            if(!character.getGender().equals("")) {
+                toSend = "Gender: " + character.getGender();
+                gender.setText(toSend);
+            }else {
+                gender.setVisibility(View.GONE);
+            }
+
+            if(!character.getBirth().equals("")) {
+                toSend = "Birth: " + character.getBirth();
+                birth.setText(toSend);
+            }else {
+                birth.setVisibility(View.GONE);
+            }
+
+            if(!character.getSpouse().equals("")) {
+                toSend = "Spouse: " + character.getSpouse();
+                spouse.setText(toSend);
+            }else {
+                spouse.setVisibility(View.GONE);
+            }
+
+            if(!character.getDeath().equals("")) {
+                toSend = "Death: " + character.getDeath();
+                death.setText(toSend);
+            }else {
+                death.setVisibility(View.GONE);
+            }
+
+            if(!character.getRealm().equals("")) {
+                toSend = "Realm: " + character.getRealm();
+                realm.setText(toSend);
+            }else {
+                realm.setVisibility(View.GONE);
+            }
+
+            if(!character.getHair().equals("")) {
+                toSend = "Hair: " + character.getHair();
+                hair.setText(toSend);
+            } else {
+                hair.setVisibility(View.GONE);
+            }
+
+            //holder.wikiUrl.setText(characters.get(position).getWikiUrl());
+            //holder.wikiUrl.setMovementMethod(LinkMovementMethod.getInstance());
+
+            wikiLink.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri webpage = Uri.parse(character.getWikiUrl());
+                    Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                    if (intent.resolveActivity(context.getPackageManager()) != null) {
+                        context.startActivity(intent);
+                    }
+                    //charactersInterface.openWikiLink(characters.get(position).getWikiUrl());
+                    //getActivity().getPackageManager())
+                }
+            });
         }
     }
 

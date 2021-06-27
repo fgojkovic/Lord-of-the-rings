@@ -21,155 +21,196 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:minHeight="35dp">
 
-            <TextView
-                android:id="@+id/character_row_character_name"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/character_row_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                android:text="name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="2dp">
 
-            <TextView
-                android:id="@+id/character_row_character_height"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="height"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_name" />
+                <TextView
+                    android:id="@+id/character_row_character_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/purple_500"
+                    android:textSize="15sp"
+                    android:text="name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="center_horizontal"/>
 
-            <TextView
-                android:id="@+id/character_row_character_race"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="race"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_height" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/character_row_character_gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="gender"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_race" />
+           <LinearLayout
+               android:id="@+id/character_row_sub_menu"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/character_row_menu">
 
-            <TextView
-                android:id="@+id/character_row_character_birth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="birth"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_gender" />
+               <TextView
+                   android:id="@+id/character_row_character_name_sub_menu"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   android:text="name"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/character_row_character_spouse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="spouse"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_birth" />
+               <TextView
+                   android:id="@+id/character_row_character_height"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:text="height"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_name" />
 
-            <TextView
-                android:id="@+id/character_row_character_death"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="death"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_spouse" />
+               <TextView
+                   android:id="@+id/character_row_character_race"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:text="race"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_height" />
 
-            <TextView
-                android:id="@+id/character_row_character_realm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="realm"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_death" />
+               <TextView
+                   android:id="@+id/character_row_character_gender"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:text="gender"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_race" />
 
-            <TextView
-                android:id="@+id/character_row_character_hair"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="hair"
-                android:textColor="@color/purple_500"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_realm" />
+               <TextView
+                   android:id="@+id/character_row_character_birth"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:text="birth"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_gender" />
 
-            <!--<TextView
-                android:id="@+id/character_row_character_wiki_url"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="wiki Url"
-                android:autoLink="web"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_hair"/>-->
+               <TextView
+                   android:id="@+id/character_row_character_spouse"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:text="spouse"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_birth" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/character_row_character_wiki_url_button"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="@string/wiki_link"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_row_character_hair"/>
+               <TextView
+                   android:id="@+id/character_row_character_death"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:text="death"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_spouse" />
+
+               <TextView
+                   android:id="@+id/character_row_character_realm"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:text="realm"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_death" />
+
+               <TextView
+                   android:id="@+id/character_row_character_hair"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="5dp"
+                   android:text="hair"
+                   android:textColor="@color/purple_500"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_realm" />
+
+               <!--<TextView
+                   android:id="@+id/character_row_character_wiki_url"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textSize="15sp"
+                   android:text="wiki Url"
+                   android:autoLink="web"
+                   android:textColor="@color/white"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_hair"/>-->
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/character_row_character_wiki_url_button"
+                   android:layout_width="150dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="15sp"
+                   android:text="@string/wiki_link"
+                   android:layout_gravity="center_horizontal"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/character_row_character_hair"/>
+
+           </LinearLayout>
+
+
 
 
 
