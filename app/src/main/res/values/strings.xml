@@ -36,11 +36,12 @@
 
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
+    <string name="profile_header">Profile</string>
     <string name="sync_header">Sync</string>
+    <string name="fonts_header">Fonts</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
+    <string name="profile_name">Your profile name</string>
     <string name="reply_title">Default reply action</string>
 
     <!-- Sync Preferences -->
@@ -55,6 +56,8 @@
     <string name="dark_mode">Dark mode</string>
     <!-- Theme Preferences -->
     <string name="themes">Themes</string>
+    <!--Fonts Prefrences -->
+    <string name="select_font">Select font</string>
 
 
     <string-array name="support_string_array">

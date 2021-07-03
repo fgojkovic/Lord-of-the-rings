@@ -9,4 +9,14 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+    <string-array name="font_entries">
+        <item>Cardinal</item>
+        <item>Prince Valiant</item>
+    </string-array>
+
+    <string-array name="font_values">
+        <item>cardinal</item>
+        <item>prince</item>
+    </string-array>
 </resources>
