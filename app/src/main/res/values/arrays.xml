@@ -16,7 +16,8 @@
     </string-array>
 
     <string-array name="font_values">
-        <item>cardinal</item>
-        <item>prince</item>
+        <item>Atomic Age</item>
+        <item>Cardinal</item>
+        <item>Prince</item>
     </string-array>
 </resources>

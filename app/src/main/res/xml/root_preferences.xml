@@ -33,9 +33,10 @@
             android:defaultValue="Cardinal"
             android:key="fonts"
             android:title="@string/select_font"
-            app:entries="@array/font_entries"
-            app:entryValues="@array/font_values"
-            app:useSimpleSummaryProvider="true"/>
+            app:entries="@array/font_values"
+            app:entryValues="@array/preloaded_fonts"
+            app:useSimpleSummaryProvider="true"
+            />
 
     </PreferenceCategory>
 
